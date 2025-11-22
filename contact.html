@@ -1,0 +1,118 @@
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Gramjyoti Rural Public School — Contact</title>
+  <style>
+    body{font-family:Arial;background:#f5f2ea;margin:0;}
+    header{
+      background:#7a4f2f;color:white;padding:15px;display:flex;align-items:center;justify-content:center;gap:12px;
+}
+header img{
+width:70px;height:70px;border-radius:40px;
+}
+    nav{
+background:#2f6b45;padding:10px;text-align:center;
+}
+    nav a{
+color:white;margin:0 10px;text-decoration:none;font-weight:bold;
+}
+    .container{
+max-width:1000px;margin:18px auto;padding:0 12px;
+}
+    .card{
+background:white;padding:15px;margin:15px 0;border-radius:50px;
+}
+    label{
+display:block;margin-top:8px;font-weight:600;
+}
+    input[
+type="text"],input[type="email"],textarea{
+      width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #ddd;box-sizing:border-box;
+    }
+    button{
+background:#2f6b45;color:#fff;padding:10px 14px;border:none;border-radius:6px;margin-top:12px;cursor:pointer;}
+   
+  </style>
+</head>
+<body>
+
+<header>
+  <!-- logo (uploaded file path used) -->
+<img src="C:\Users\91990\OneDrive\Attachments\school.png" alt="School Logo">
+<div>
+ <h1 style="margin:0;">Gramjyoti Rural Public School</h1>
+ <p style="margin:0;">Growing Education in Rural India</p>
+  </div>
+</header>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="sdg.html">SDG Goals</a>
+  <a href="About.html">About</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- small banner using classroom image (uploaded file path used) -->
+
+<div class="container">
+  <div class="card">
+    <h2 style="margin-top:0;">Contact & Feedback ✉️</h2>
+    <p>Have a question, suggestion or want to volunteer? Send us a message — we reply soon.</p>
+
+    <!-- simple contact form (beginners can understand) -->
+    <form id="contactForm">
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@example.com" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+      <p id="status" class="small" style="display:none;margin-top:8px;color:;"></p>
+    </form>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:0 0 8px ;">School Address & Phone 📍</h3>
+    <p class="small">Gramjyoti Rural Public School<br>Village Kurla, District Mumbai<br>Phone: +91 080888088<br>Email: ruralpublicschool@example.com</p>
+
+    <h3 style="margin-top:12px;margin-bottom:6px;">Visit Hours ⏰</h3>
+    <p class="small">Mon – Sat: 9:00 AM – 4:00 PM</p>
+  </div>
+</div>
+
+<footer style="background:#7a4f2f;color:white;text-align:center;padding:10px;margin-top:20px;">
+  © 2025 Gramjyoti Rural Public School
+</footer>
+
+<script>
+  // Simple client-side handling: validate & save message to localStorage as demo
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var message = document.getElementById('message').value.trim();
+    if(!name || !email || !message){ alert('Please fill all fields.'); return; }
+
+    // save demo entry to localStorage (so user sees action)
+    var db = JSON.parse(localStorage.getItem('school_messages') || '[]');
+    db.push({name:name,email:email,message:message,time:new Date().toISOString()});
+    localStorage.setItem('school_messages', JSON.stringify(db));
+
+    // show status and reset form
+    var s = document.getElementById('status');
+    s.textContent = 'Thanks! Your message has been received (demo).';
+    s.style.display = 'block';
+    this.reset();
+    // hide status after 4 seconds
+    setTimeout(function(){ s.style.display = 'none'; }, 4000);
+  });
+</script>
+
+</body>
+</html>

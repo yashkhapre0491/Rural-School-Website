@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Gramjyoti Rural Public School — Gallery</title>
+  <style>
+    body{font-family:Arial;background:#f5f2ea;margin:0;}
+    header{background:#7a4f2f; color:white; padding:15px; display:flex; align-items:center; justify-content:center; gap:12px;
+}
+header img{
+width:62px;height:62px;border-radius:40px;
+}
+nav{
+background:#2f6b45;padding:10px;text-align:center;
+}
+ nav a{
+color:white;margin:0 10px;text-decoration:none;font-weight:bold;
+}
+.container{
+max-width:1100px;margin:14px auto;padding:0 12px;
+}
+h2{
+margin:6px 0 10px 0;
+}
+    /* Responsive grid: auto-fit/minmax makes images adapt to screen size */
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(4, 1fr);gap:12px;
+align-items:start;
+}
+    .card{
+      background:#fff;border-radius:8px; overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.06);cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease;
+      display:flex;flex-direction:column;
+    }
+    .card:hover{ transform:translateY(-6px); box-shadow:0 12px 26px rgba(0,0,0,0.12);
+ }
+    .card img{width:100%;height:160px;object-fit:cover;display:block;
+}
+    .caption{padding:10px;font-size:14px;color:#222;
+}
+    /* Tiny responsive tweak */
+    @media(max-width:420px){ .card img{height:120px;} }
+    /* Lightbox (simple) */
+    .lightbox{
+      display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;z-index:9999;
+    }
+    .lightbox.active{display:flex;}
+    .lightbox img{max-width:95%;max-height:85%;border-radius:6px;box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+    .lightbox .close{position:absolute;top:18px;right:18px;color:white;font-size:28px;background:rgba(0,0,0,0.4);padding:6px 10px;border-radius:6px;cursor:pointer;}
+footer{background:#7a4f2f;color:white;text-align:center;padding:10px;margin-top:20px;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- logo: replace with local file if running locally -->
+<img src="C:\Users\91990\OneDrive\Attachments\school.png" alt="School Logo">
+    <div>
+      <h1 style="margin:0;">Gramjyoti Rural Public School</h1>
+     
+    </div>
+  </header>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="sdg.html">SDG Goals</a>
+  <a href="About.html">About</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+  <div class="container">
+<center><p><b><b><big><big><big><big>Gallery & Activities 📸</big></big></big></big></b></b></p></center>
+    <h2>Photo Gallery — Village School Life 🌾</h2>
+    <p style="color:#333;margin-bottom:12px;"><big>A small collection of classroom, outdoor learning, events and community activities>/big></p>
+
+    <div class="gallery-grid">
+      <!-- 1 -->
+      <div class="card" onclick="openLightbox('Attachments/school.jpg','School front and sign')">
+        <img src="C:\Users\91990\OneDrive\Attachments\school.jpg" alt="School front">
+        <div class="caption">🏫 School building & signboard</div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card" onclick="openLightbox('/mnt/data/4f8adfde-f119-48f0-bb8b-e3f65421384c.png','School emblem')">
+        <img src="C:\Users\91990\OneDrive\Attachments\school.png" alt="School emblem">
+        <div class="caption">🌟 School emblem & logo</div>
+      </div>
+
+      <!-- 3 (uploaded screenshot) -->
+      <div class="card" onclick="openLightbox('/mnt/data/3d84b731-d0d2-4952-8251-014fbf8ffffd.png','Community event')">
+        <img src="C:\Users\91990\OneDrive\Attachments\event.jpg" alt="Community event">
+        <div class="caption">🤝 Community meeting & events</div>
+      </div>
+
+      <!-- 4 (uploaded screenshot) -->
+      <div class="card" onclick="openLightbox('/mnt/data/ee02f609-7abe-44e8-a786-0e182ae86edf.png','School program')">
+        <img src="C:\Users\91990\OneDrive\Attachments\program.jpg" alt="Program">
+        <div class="caption">🎉 School program snapshots</div>
+      </div>
+
+      <!-- 5 (problem statement image you provided) -->
+      <div class="card" onclick="openLightbox('/mnt/data/6b29eb1e-038d-4e84-aaec-44584fc398a9.png','Project snapshot')">
+        <img src="C:\Users\91990\OneDrive\Attachments\project.jpg" alt="Project">
+        <div class="caption">📷 Project snapshot / design notes</div>
+      </div>
+
+      <!-- 6 (online placeholder) -->
+      <div class="card" onclick="openLightbox('https://source.unsplash.com/800x600/?children,school','Children learning')">
+        <img src="C:\Users\91990\OneDrive\Attachments\plant.png" alt="Children learning">
+        <div class="caption">🌳 Plantation</div>
+      </div>
+
+      <!-- 7 (online placeholder) -->
+      <div class="card" onclick="openLightbox('https://source.unsplash.com/800x600/?library,books','Library time')">
+        <img src="C:\Users\91990\OneDrive\Attachments\classroom.png"alt="Classroom">
+        <div class="caption">📖 Classroom</div>
+      </div>
+
+      <!-- 8 (online placeholder) -->
+      <div class="card" onclick="openLightbox('https://source.unsplash.com/800x600/?garden,school','School garden')">
+        <img src="C:\Users\91990\OneDrive\Attachments\playground.png" alt="School garden">
+        <div class="caption">🌿 School Playground</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simple Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <span class="close" onclick="closeLightbox(event)">✕</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <footer>
+    © 2025 Gramjyoti Rural Public School
+  </footer>
+
+<script>
+  function openLightbox(src, alt){
+    var lb = document.getElementById('lightbox');
+    var img = document.getElementById('lightbox-img');
+    img.src = src;
+    img.alt = alt || '';
+    lb.classList.add('active');
+  }
+  function closeLightbox(e){
+    // prevent click on image from closing
+    if(e && e.target && e.target.id === 'lightbox-img') return;
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-img').src = '';
+  }
+</script>
+
+</body>
+</html>
